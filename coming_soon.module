@@ -1,0 +1,26 @@
+<?php
+/**
+ * @Author
+ * Roald Umandal.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function coming_soon_menu() {
+
+}
+
+/**
+ * Implement hook_theme().
+ */
+function coming_soon_theme() {
+
+}
+
+/**
+ * Coming soon page callback.
+ */
+function coming_soon_page() {
+    
+}
