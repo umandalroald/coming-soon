@@ -9,6 +9,14 @@
  */
 function coming_soon_menu() {
 
+  $items['comming-soon'] = array(
+    'title' => 'Coming Soon',
+    'page callback' => 'comming_soon_page',
+    'access arguments' => array('access coming soon'),
+    'type' => 'MENU_CALLBACK',
+  );
+  
+  return $items;
 }
 
 /**
@@ -22,5 +30,17 @@ function coming_soon_theme() {
  * Coming soon page callback.
  */
 function coming_soon_page() {
-    
+
+}
+
+/**
+ * Implement hook_permission().
+ */
+function coming_soon_permission() {
+  return array(
+    'access coming soon' => array(
+      'title' => t('Access coming soon page'),
+      'description' => t('Allow viewing of coming soon page'),
+    ),
+  );
 }
