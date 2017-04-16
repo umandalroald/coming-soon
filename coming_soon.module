@@ -9,28 +9,49 @@
  */
 function coming_soon_menu() {
 
-  $items['comming-soon'] = array(
+  $items['coming-soon'] = array(
     'title' => 'Coming Soon',
-    'page callback' => 'comming_soon_page',
+    'page callback' => 'coming_soon_page',
     'access arguments' => array('access coming soon'),
-    'type' => 'MENU_CALLBACK',
+    'type' => MENU_CALLBACK,
   );
-  
+
   return $items;
 }
 
 /**
- * Implement hook_theme().
+ * Implements theme_preprocess_page().
  */
-function coming_soon_theme() {
-
+function coming_soon_preprocess_page(&$variables) {
+  $arg = arg(0);
+  if($arg == 'coming-soon') {
+    $variables['theme_hook_suggestions'][] = 'coming_soon_page';
+  }
 }
 
 /**
  * Coming soon page callback.
  */
 function coming_soon_page() {
+  drupal_add_css(drupal_get_path('module', 'coming_soon') . '/css/coming_soon.css', array('type' => 'file', 'scope' => 'header', 'weight' => -18));
+  drupal_add_js(drupal_get_path('module', 'coming_soon') . '/js/coming_soon.js', array('type' => 'file', 'scope' => 'footer', 'weight' => -18));
+  $data = array(
+    'title' => 'Hex',
+  );
+  return theme('coming_soon_page', array('items' => $data));
+}
 
+
+/**
+ * Implement hook_theme().
+ */
+function coming_soon_theme() {
+  return array(
+    'coming_soon_page' => array(
+      'variables' => array('items' => NULL),
+      'template' => 'templates/coming-soon-page'
+    ),
+  );
 }
 
 /**
