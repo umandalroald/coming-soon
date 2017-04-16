@@ -1,5 +1,5 @@
 <div class="topleft">
-  <p><% Roald R. Umandal %></p>
+  <p><%<?php print $header; ?>%></p>
 </div>
 
 <div class="middle">
