@@ -1,0 +1,65 @@
+body, html {
+    height: 100% !important;
+    margin: 0 !important;
+    background: #052f40 !important;
+    font-family: "Courier New", Courier, monospace !important;
+    font-size: 25px !important;
+    color: white !important;
+}
+
+.topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+}
+
+.bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+}
+
+.middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.divider {
+   border: 1px solid #FFF;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+ul.social-media-links li {
+  display: inline-block;
+  margin: -5px;
+  font-size: 20px;
+}
+
+ul.social-media-links li a {
+  color: #FFF;
+}
+
+ul.social-media-links li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+ul.social-media-links li a:hover {
+  color: rgb(84, 82, 82);
+  text-decoration: line-through;
+}
+
+ul.social-media-links li a::before {
+  content: "[";
+}
+
+ul.social-media-links li a::after {
+  content: "]";
+}
